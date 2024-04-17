@@ -2,16 +2,17 @@ import { MongoClient, ObjectId } from 'mongodb';
 import Schema from '../schema/index.js';
 import Controll from './Controll.js';
 
-export default class MongoDB {
-    static #DBNAME = "group8"; //имя базы
-    static #LOCATION = "mongodb://localhost"; //127.0.0.1
-    static #PORT = 27017; //порт
-    static #LOGIN; //логин
-    static #PSSWD; //пароль
+export default class MongoDB 
+{
+    static #DBNAME = 'group8'; // Имя базы данных
+    static #LOCATION = 'mongodb://localhost'; //Адрес === 127.0.0.1
+    static #PORT = 27017; //Порт
+    static #LOGIN;
+    static #PSSWD;
 
     constructor(collectionName = '') {
-        console.log('start DB connect');
-        const url = [MongoDB.#LOCATION, MongoDB.#PORT].join(":") + '/'; //mongodb://localhost:12017
+        console.info('start DB connect');
+        const url = [MongoDB.#LOCATION, MongoDB.#PORT].join(':') + '/';
         this.client = new MongoClient(url);
         this.db = this.client.db(MongoDB.#DBNAME);
 
@@ -21,51 +22,45 @@ export default class MongoDB {
             this.controll = new Controll(collectionName);
         }
         
-        console.log('DB connect');
+        console.info('DB connect success');
     }
 
-    async getCountElements(collectionName) {
+    async count() {
         try {
-            if(collectionName != '') {
-                const collection = this.db.collection(collectionName);
-                const count = await collection.countDocuments();
-                return count;
-            }
-            else {
-                return 0;
-            }
+            const count = await this.collection.countDocuments();
+            return count;
         }
         catch(e) {
             console.log(e);
         }
     }
 
-    static issetCollection(collectionName) {
-        this.Init();
+    issetCollection(collectionName) {
         let result = false;
         if(collectionName != "") {
             result = (this.db[collectionName]);
         }
-        this.mongoClient.close();
         return result;
     }
-    
-    static createCollection(collectionName) {
+
+    createCollection(collectionName, props = {}) {
         if(collectionName === "")
             return false;
 
         let isset = this.issetCollection(collectionName);
+
         if(!isset) {
-            this.initDb();
-            let collection = this.db.createCollection(collectionName);
+            this.Init();
+
+            let collection = this.db.createCollection(collectionName, props);
             this.mongoClient.close();
-            return collection; // {ok : 1}
+            return collection; // {ok: 1}
         }
 
         return false;
     }
 
-    async setValue(props = {}) {
+    async set(props = {}) {
         if(!this.collection)
             return {};
 
@@ -74,51 +69,63 @@ export default class MongoDB {
 
         if(controllData._id) {
             //UPDATE
-            id = await this.collection.updateOne({ _id : controllData._id }, { $set: controllData });
+            let result = await this.collection.updateOne(
+                { _id : controllData._id },
+                { $set : controllData }
+            );
+            id = result;
         }
         else {
             //ADD
             id = await this.collection.insertOne(controllData);
         }
 
-        //let id = await this.collection.insertOne(props); //db.collectionName
         return id;
     }
 
-    async removeValue(id) {
+    /**
+     * 
+     * @param {*} collectionName 
+     * @param {*} _id 
+     */
+    async remove(_id) {  
         if(!this.collection)
-            return {};
-        await this.collection.deleteOne({_id : new ObjectId(id)});
+            return {};       
+        await this.collection.deleteOne({_id: new ObjectId(_id)});
+        return true;
     }
 
-    static getCount(collectionName) {
-        this.Init();
-        let result = 0;
-        if(collectionName != "") {
-            result = this.db[collectionName].count();
-        }
-        this.mongoClient.close();
-        return result;
-    }
-
-    async getValue(options = {}) {
+    /**
+     * 
+     * @param {*} filter 
+     * @param {*} select 
+     * @param {*} limit 
+     * @param {*} pageCount 
+     * @returns 
+     */
+    async get(options = {}) {
         if(!this.collection)
             return {};
-        
+
+        //Дефолтный фильтр по идентификатору
+        let _this = this;
         let filter = options.filter ? options.filter : {};
+        let unPrepResult;
 
-        if(options.search && options.search.length > 2) {
+        //Поисковый запрос
+        if(options.search && options.search.length > 1) {
             let arLine = options.search.split(' ').join('|');
+
             let query = new RegExp(arLine);
             let xor = [];
-
-            for(let index in this.schema) {
-                let item = this.schema[index];
+            
+            for(let index in _this.schema) {
+                let item = _this.schema[index];
 
                 if(item.searchable) {
                     let el = {};
-                    el[index] = { $regex : query, $options: 'i' };
-                    xor.push(el);
+                    el[index] = { $regex : query, $options: 'i'};
+                    xor.push(el)
                 }
             }
 
@@ -127,6 +134,8 @@ export default class MongoDB {
             }
         }
 
+        //min & max
+        //this.collection.find().sort( {KEY:  -1}).limit(1).toArray();
         if(options.sort) {
             if(options.sort.max) {
                 options.sort.key = -1;
@@ -147,18 +156,19 @@ export default class MongoDB {
             }
         }
 
+        //filter custom 
         if(options.filter.filter === 'Y') {
             filter = {};
-
-            for(let i in options.filter) {
+            for (let i in options.filter) {
                 let el = options.filter[i];
                 let from, to;
 
+
                 if(i === 'filter')
                     continue;
-
-                switch(this.schema[i].type) {
-                    case "Number":
+                
+                switch(_this.schema[i].type) {
+                    case 'Number':
                         from = parseInt(el.FROM);
                         to = parseInt(el.TO);
                     break;
@@ -169,28 +179,26 @@ export default class MongoDB {
                     break;
                 }
 
-                filter[i] = { $gte: from , $lte : to}
+                filter[i] = { $gte: from, $lte: to }
             }
         }
-
-        let unPreparedData;
 
         if(options.sort && options.sort.key) {
             let sort = {};
             sort[options.sort.name] = options.sort.key;
-            unPreparedData = await this.collection.find().sort(sort).limit(options.sort.limit).toArray();
+            unPrepResult = await this.collection.find().sort(sort).limit(options.sort.limit).toArray();
         }
         else {
-            unPreparedData = await this.collection.find(filter).toArray();
+            unPrepResult = await this.collection.find(filter).toArray();
         }
 
-        let data = Controll.prepareData(unPreparedData, this.schema);
+        let data = Controll.prepareData(unPrepResult, _this.schema);
         let simId = {};
         let sim = {};
 
         data.forEach(item => {
             for(let i in item) {
-                let keyElement = item[i];
+                let keyElement =item[i];
 
                 if(keyElement.ref) {
                     if(!simId[keyElement.collectionName])
@@ -207,47 +215,54 @@ export default class MongoDB {
                 let ids = simId[collection];
 
                 sim[collection] = await mdb.collection.find({
-                    _id: { $in : ids }
+                    _id: { $in: ids }
                 }).toArray();
             }
         }
 
         return {
-            head: this.schema,
+            schema: _this.schema,
             data: data,
             sim: sim
         };
     }
 
-    async getByIds(ar = []) {
-
-    }
-
-    async getOne(filter = {}) {
+    async findSimilar(data = []) {
         if(!this.collection)
             return {};
-        return await this.collection.findOne(filter);
+
+        let newData = data;
+
+        data.forEach(async (item, i) => {
+            for(let index in item) {
+                if(item[index].collectionName) {
+                    let el = await this.getSimilar(item[index]);
+                    console.log(index, newData[i], el);
+                    newData[i][index]['TITLE'] = el.TITLE;
+                }
+            }
+        });
+
+        return await newData;
     }
 
-    static isJson(value) {
+    static isJson(str) {
         try {
-            JSON.parse(value);
-        } catch (error) {
+            JSON.parse(str);
+        }
+        catch(error) {
+            //console.error(error);
             return false;
         }
 
         return true;
     }
 
-    /**
-     * Отложенный сбор информации о всех коллекциях
-     * @returns 
-     */
-    async getCollectionsStats() { //перечень имен коллекций
+    async getCollectionsStats() {
         let result = [];
         let sources = await this.db.listCollections().toArray();
 
-        for (const source of sources) {
+        for(const source of sources) {
             const mdb = new MongoDB(source.name);
             const data = await mdb.getCollectionInfo();
             result.push(data);
@@ -256,10 +271,6 @@ export default class MongoDB {
         return result;
     }
 
-    /**
-     * Отложенный сбор информации одной коллекции
-     * @returns 
-     */
     async getCollectionInfo() {
         let _this = this;
 
@@ -270,5 +281,6 @@ export default class MongoDB {
                 DOCUMENTS: await _this.collection.countDocuments()
             });
         });
-    }
+
+    } 
 }

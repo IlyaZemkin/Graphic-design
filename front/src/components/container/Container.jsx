@@ -1,48 +1,43 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Form from "../form/Form.jsx";
 import Table from "../table/Table.jsx";
-import Index from '../index/Index.jsx';
-import HeaderTag from "../headertagg/HeaderTag.jsx";
+import Index from "../index/Index.jsx";
 import Search from "../search/Search.jsx";
 
 export default function Container({ curPath }) 
 {
-    const [row, setRow] = useState('');
-    const [collectionName, setCollectionName] = useState(null);
+    const [row, setRow] = useState({});
     const [query, setQuery] = useState('');
+    const [collectName, setCollectionName] = useState(null);
 
-    const handleUpdateRow = (value) => {
+    const handle = (value) => {
         if(value.data)
             setRow(value.data[0]);
     }
 
     const handleSearch = (value) => {
-        if(value)
+        if(value != '')
             setQuery(value);
     }
 
     const setCollection = useCallback(async () => {
-        if(curPath!=='index')
+        if(curPath !== 'index' && curPath !== '/')
             setCollectionName(curPath);
-    })
+    });
 
     useEffect(
-        () => { 
+        () => {
             setCollection();
         }, [setCollection]
-    )
+    );
 
     return (
-        <div className='container'>
-            <h1>
-                {!collectionName && 'Главная'}
-                {collectionName && <HeaderTag name={collectionName}/>}
-            </h1>
-            { collectionName && <Search onChange={handleSearch} nameCollection={collectionName}/>}
-            { collectionName && <Form arValue={row} nameForm={collectionName}/> }
-            { collectionName && <Table onChange={handleUpdateRow} nameTable={collectionName} query={query}/>}
-            
-            { !collectionName && <Index></Index>}
+        <div className="container">
+            {collectName && <Search onChange={handleSearch} nameCollection={collectName}/> }
+            {collectName && <Form arValue={row} nameForm={collectName}></Form> }
+            {collectName && <Table onChange={handle} nameTable={collectName} query={query}></Table>}
+
+            {!collectName && <Index/>}
         </div>
     )
 }

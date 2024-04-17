@@ -1,30 +1,19 @@
 menu {
     display:flex;
     gap:15px;
-    text-transform: uppercase;
-    margin:0;
-    padding:0;
 }
 
-menu li {
-    list-style: none;
-    margin:0;
-    padding: 5px 10px;
-    background:#1E88E5;
-    color:#fff;
-    cursor: pointer;
-    font-size:12px;
-}
-
-menu li a {
-    color:#fff;
+menu a {
+    color:#333;
     text-decoration:none;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-menu li.selected {
-    background: #000;
+menu a:hover {
+    text-decoration: underline;
 }
 
-menu li:hover {
-    background:#1976D2;
+menu a.selected {
+    color: #1976d2
 }

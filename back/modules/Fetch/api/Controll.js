@@ -1,62 +1,62 @@
-import { DBRef, ObjectId } from "mongodb";
+import { DBRef, ObjectId } from 'mongodb';
 import schema from "../schema/index.js";
-import MongoDB from "./MongoDB.js";
-import Fetch from "../index.js";
 
 export default class Controll {
+    constructor(collectionName) {
+        if(collectionName.length == 0 )
+            return false;
 
-    constructor(collectionName = '') {
-        if(collectionName == '')
-            return;
-
+        this.error = null;
         this.schema = schema[collectionName];
     }
 
-    preparePost(query = {}) {
+    showError() {
+        console.log(this.error)
+    }
+
+    preparePost(query) {
         let data = {};
 
-        //Если есть данный атрибут, то это будет сигналом для обновления, если нет - для добавления
-        if(query._id.length > 0) {
+        if(query._id && query._id.length > 0) {
             data._id = new ObjectId(query._id);
         }
 
         if(Object.keys(query).length > 0 && Object.keys(this.schema).length > 0) {
-            for (let i in this.schema) {
+            for(let i in this.schema) {
                 if(i === '_id') continue;
 
-                let checkElement = query[i];
+                let checkValue = query[i];
                 let checkSchema = this.schema[i];
 
-                if(checkElement != '') {
+                if(checkValue != '') {
                     switch(checkSchema.type) {
-                        case 'Number':
-                            data[i] = parseFloat(checkElement);
+                        case "Number":
+                            data[i] = parseFloat(checkValue);
                         break;
 
-                        default:
-                        case 'String':
+                        case "String":
                             case 'Phone':
                                 case 'Email':
-                            data[i] = String(checkElement);
+                            data[i] = String(checkValue);
                         break;
 
-                        case "Date":
-                            let d = checkElement.split('.');
+                        case 'Date':
+                            let d = checkValue.split('.');
                             data[i] = new Date(d[2], d[1]-1, d[0]);
                         break;
 
                         case 'DBRef':
-                            let value = new DBRef(checkSchema.collection, new ObjectId(checkElement));
-                            data[i] = value;
+                            //console.log(checkSchema.collection, checkValue);
+                            data[i] = new DBRef(checkSchema.collection, new ObjectId(checkValue));
+                            // { $ref: 'collection', $id: new ObjectId()}
                         break;
                     }
                 }
-                else {
+                else { //Подставляем значения по умолчанию, если оно пришло пустым или не существует
                     data[i] = checkSchema.default;
                 }
             }
         }
-
         return data;
     }
 
@@ -68,24 +68,27 @@ export default class Controll {
                 let newRow = {};
 
                 for(let fieldName in schema) {
-                    let fieldSchema = schema[fieldName];
+                    let fieldSchema  = schema[fieldName];
                     let newData = (item[fieldName]) ? item[fieldName] : fieldSchema.default;
                     if(fieldSchema.type === 'DBRef') {
-                        let dbref = item[fieldName];
+                        let dbref = item[fieldName]; // { $ref: collection, $id: new ObjectId}
+                        let collection = dbref.collection;
+                        let oid = dbref.oid;
 
-                        if(dbref.collection) {
+                        if(collection) {
                             newRow[fieldName] = {
                                 ref: true,
-                                collectionName: dbref.collection,
-                                _id: String(dbref.oid)
+                                collectionName: collection,
+                                _id: String(oid) //{a: 1} === {a: 1}
                             }
                         }
-                        
                     }
                     else {
                         newRow[fieldName] = newData;
                     }
+                    
                 }
+
                 result.push(newRow);
             });
         }

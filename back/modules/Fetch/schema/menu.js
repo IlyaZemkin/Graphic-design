@@ -3,15 +3,15 @@ const menu = {
     NAME: {
         type: 'String',
         require: true,
-        default: 'none',
+        default: 'None',
         loc: "Название"
     },
     LINK: {
         type: 'String',
-        require: false,
-        default: 'none',
+        require: true,
+        default: 'None',
         loc: "Ссылка"
     }
-};
+}
 
 export default menu;
