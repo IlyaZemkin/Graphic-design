@@ -1,31 +1,16 @@
-import Header from './components/header/Header.jsx';
-import Container from './components/container/Container.jsx';
-import './css/style.css';
-import { BrowserRouter } from 'react-router-dom';
-import Route from './modules/Routes.js';
-import { useState, useEffect, useCallback } from 'react';
-
-//const PORT = 3000;
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Button } from "react-bootstrap";
+import './bootstrap.min.css';
+import Header from "./components/Header.jsx";
 
 function App() {
-  let [currentPath, setCurrentPath] = useState('/');
-
-  const setPath = useCallback(async () => {
-    let r = new Route();
-    setCurrentPath(r.getUrl())
-  }, [])
-
-  useEffect(
-    () => {setPath()}, [setPath] 
-  );
-
-  return (
-        <div className="App">
-          <Header curPath={currentPath} />
-          
-          <Container curPath={currentPath}></Container>      
+    return (
+        <div>
+            <Header />
         </div>
-  );
+    );
 }
 
 export default App;

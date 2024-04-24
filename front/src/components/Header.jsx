@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar, Nav, FormControl, Container, Form, Button } from "react-bootstrap";
 import logo from './logo192.png';
 
-export default class Header extends Component {
-  render() {
+export default function Header() {
     return (
-      <Navbar collapseOneSelect expand="md" bg="dark" variant="dark" >
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
         <Container>
             <Navbar.Brand href="/" >
                 <img
@@ -24,11 +23,11 @@ export default class Header extends Component {
                 <Nav.Link href="/contacts" > Contacts </Nav.Link>
                 <Nav.Link href="/blog" > Blog </Nav.Link>
               </Nav>
-              <Form className='d-flex' >
+              <Form inline >
                 <FormControl
                   type="text"
                   placeholder="Search"
-                  className="me-sm-2"
+                  className="mr-sm-2"
                 />
                 <Button variant="outline-info">Search</Button>
               </Form>
@@ -37,4 +36,3 @@ export default class Header extends Component {
       </Navbar>
     )
   }
-}
