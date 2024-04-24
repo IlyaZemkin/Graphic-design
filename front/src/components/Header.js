@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Navbar, Nav, FormControl, Container, Form, Button } from "react-bootstrap";
 import logo from './logo192.png';
 
-export default function Header() {
+export default class Header extends Component {
+  render() {
     return (
       <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
         <Container>
@@ -16,7 +17,7 @@ export default function Header() {
                 />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collage id="responsive-navbar-nav" >
+            <Navbar.Collapse id="responsive-navbar-nav" >
               <Nav className="ms-auto">
                 <Nav.Link href="/" > Home </Nav.Link>
                 <Nav.Link href="/about" > About us </Nav.Link>
@@ -31,8 +32,9 @@ export default function Header() {
                 />
                 <Button variant="outline-info">Search</Button>
               </Form>
-            </Navbar.Collage>
+            </Navbar.Collapse>
         </Container>
       </Navbar>
     )
   }
+}

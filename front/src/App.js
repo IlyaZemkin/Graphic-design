@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from "react-bootstrap";
 import './bootstrap.min.css';
-import Header from "./components/Header.jsx";
+import Header from "./components/Header.js";
 
 function App() {
     return (
