@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, FormControl, Container, Form, Button } from "react-bootstrap";
+import { 
+  Navbar,
+  Nav,
+  FormControl,
+  Container,
+  Form,
+  Button
+} from "react-bootstrap";
 import logo from './evrylogo.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -12,7 +19,7 @@ export default class Header extends Component {
   render() {
     return (
       <>
-        <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark" >
+        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="/" >
               <img
