@@ -10,10 +10,14 @@ import {
 import logo from './evrylogo.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Home from '../Pages/Home';
-import About from '../Pages/About';
-import Contacts from '../Pages/Contacts';
-import Blog from '../Pages/Blog';
+import Home from '../Pages/Home.js';
+import About from '../Pages/About.js';
+import Contacts from '../Pages/Contacts.js';
+import Blog from '../Pages/Blog.js';
+
+const curPath = window.location;
+
+console.log(curPath)
 
 export default class Header extends Component {
   render() {
@@ -58,6 +62,11 @@ export default class Header extends Component {
             <Route exact path="/blog" component={Blog} />
           </Routes>
         </Router>
+
+        {curPath.pathname === '/' && <Home></Home>}
+        {curPath.pathname === '/about' && <About></About>}
+        {curPath.pathname === '/contacts' && <Contacts></Contacts>}
+        {curPath.pathname === '/blog' && <Blog></Blog>}
       </>
     );
   }
