@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import CarouselBox from '../components/CarouselBox';
 import { Container, Card, Button } from 'react-bootstrap';
-import creativasImg from '../assets/creativas.jpg';
-import packoneImg from '../assets/pack1.jpg';
-import packtwoImg from '../assets/pack2.jpg';
+import tovarsImg from '../assets/tovars.png';
+import tovarsoneImg from '../assets/tovars1.png';
+import tovarstwoImg from '../assets/tovars2.png';
+import tovarsthreeImg from '../assets/tovars3.png';
 
 export default class Home extends Component {
   render() {
@@ -11,20 +12,19 @@ export default class Home extends Component {
     <>
       <CarouselBox />
       <Container>
-        <h2 className="text-center m-4">Cards</h2>
+        <h2 className="text-center m-4">Услуги</h2>
         <div text-align="left">
           <Card style={{ width: '17rem' }} className="mt-3" border="succes">
             <Card.Img 
               className="d-block w-100"
-              height={230}
               variant="top"
-              src={ creativasImg }
+              src={ tovarsImg }
               alt="Creativas"
             />
             <Card.Body>
-              <Card.Title>Ну какая-та карточка</Card.Title>
-              <Card.Text>DADADADADdadadadadDaDaDadaAdadASsdDSd</Card.Text>
-              <Button variant="primary" >About cards</Button>
+              <Card.Title>Оформление социальных сетей</Card.Title>
+              <Card.Text>◉ Оформление Вк/Ют - от 699₽ <p>◉ Отзывы - ★★★★★</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne</Card.Text>
+              <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
         </div>
@@ -32,14 +32,14 @@ export default class Home extends Component {
         <div text-align="center">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
-              <Card.Title>Ну какая-та карточка</Card.Title>
-              <Card.Text>DADADADADdadadadadDaDaDadaAdadASsdDSd</Card.Text>
-              <Button variant="primary" >About cards</Button>
+              <Card.Title>Превью / Баннер</Card.Title>
+              <Card.Text>◉ Превью/Баннер - 300₽ <p>◉ Отзывы - ☆☆☆☆☆</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne <p>Укрась свой видеоролик! Опыт работы, более 3-х лет.</p></Card.Text>
+              <Button variant="primary" >Об услуге</Button>
             </Card.Body>
             <Card.Img 
               className="d-block w-100"
               variant="bottom"
-              src={ packoneImg }
+              src={ tovarsoneImg }
               alt="Packone"
             />
           </Card>
@@ -50,13 +50,13 @@ export default class Home extends Component {
             <Card.Img 
               className="d-block w-100"
               variant="top"
-              src={ packtwoImg }
+              src={ tovarstwoImg }
               alt="Packtwo"
             />
             <Card.Body>
-              <Card.Title>Ну какая-та карточка</Card.Title>
-              <Card.Text>DADADADADdadadadadDaDaDadaAdadASsdDSd</Card.Text>
-              <Button variant="primary" >About cards</Button>
+              <Card.Title>Приватная группа</Card.Title>
+              <Card.Text>◉ Вход - 500₽ <p>• Интересует, что находится в приватке? Скорее пиши!</p> <p>◉ Отзывы - ★★★★★</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne</Card.Text>
+              <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
         </div>
@@ -64,14 +64,14 @@ export default class Home extends Component {
         <div text-align="right">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
-              <Card.Title>Ну какая-та карточка</Card.Title>
-              <Card.Text>DADADADADdadadadadDaDaDadaAdadASsdDSd</Card.Text>
-              <Button variant="primary" >About cards</Button>
+              <Card.Title>Другие услуги</Card.Title>
+              <Card.Text>◉ Всё обязательно обсуждается с дизайнером <p>◉ Отзывы - ☆☆☆☆☆</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne <p>Приятные цены, и качественный результат.</p></Card.Text>
+              <Button variant="primary" >Об услуге</Button>
             </Card.Body>
             <Card.Img 
               className="d-block w-100"
               variant="bottom"
-              src={ packoneImg }
+              src={ tovarsthreeImg }
               alt="Packone"
             />
           </Card>
