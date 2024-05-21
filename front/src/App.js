@@ -3,9 +3,6 @@ import logo from './logo.svg';
 import { Button } from "react-bootstrap";
 import './bootstrap.min.css';
 import Header from "./components/Header.js";
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import TextBlock from './textBlock.js';
-import './App.css';
 
 function App() {
     return (
