@@ -24,12 +24,10 @@ export default class CarouselBox extends Component {
                     src={ shtormImg }
                     alt="Shtorm"
                 />
-                <div text="primary">
                 <Carousel.Caption>
                     <h3>Graphic Design</h3>
                     <p>There are three answers to the design outcome - yes, no and WOW! “Wow” is what we should strive for.</p>
                 </Carousel.Caption>
-                </div>
             </Carousel.Item>
         </Carousel>
     )

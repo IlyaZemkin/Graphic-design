@@ -1,15 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import { Button } from "react-bootstrap";
 import './bootstrap.min.css';
 import Header from "./components/Header.js";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import TextBlock from './textBlock.js';
+import './App.css';
 
 function App() {
     return (
-        <div>
-            <Header />
-        </div>
+    <div>
+      <Header />
+    </div>
     );
 }
 
