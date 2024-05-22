@@ -59,6 +59,7 @@
       width: 100%;
       position: absolute;
   }
+  
   .animation_layer.parallax {
       position: fixed;
   }
@@ -97,4 +98,8 @@
   
   #manonmountain {
     background-image: url(./images/man_on_mountain.png);
+  }
+
+  .navbar {
+    z-index: 100000;
   }

@@ -12,7 +12,7 @@ function TextBlock() {
                 But when something strange draws you out of your lookout tower and into the world below, you'll explore a wild and unknown environment, facing questions and making interpersonal choices that can build or destroy the only meaningful relationship you have.
                 </p>
             </div>
-            <footer id='textblock-footer'>Designer 🧡 By&nbsp;<a id="textblock-devsense" href="https://youtube.com/c/DevSense19">Evry Project</a></footer>
+            <footer id='textblock-footer'>Designer 🧡 By&nbsp;<a id="textblock-devsense" href="https://vk.com/itsnelxne">Evry Project</a></footer>
         </div>
     );
 }

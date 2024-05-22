@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CarouselBox from '../components/CarouselBox';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card, Button, CardGroup } from 'react-bootstrap';
 import tovarsImg from '../assets/tovars.png';
 import tovarsoneImg from '../assets/tovars1.png';
 import tovarstwoImg from '../assets/tovars2.png';
@@ -13,7 +13,7 @@ export default class Home extends Component {
       <CarouselBox />
       <Container>
         <h2 className="text-center m-4">Услуги</h2>
-        <div text-align="left">
+        <CardGroup>
           <Card style={{ width: '17rem' }} className="mt-3" border="succes">
             <Card.Img 
               className="d-block w-100"
@@ -27,9 +27,7 @@ export default class Home extends Component {
               <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
-        </div>
 
-        <div text-align="center">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
               <Card.Title>Превью / Баннер</Card.Title>
@@ -43,9 +41,7 @@ export default class Home extends Component {
               alt="Packone"
             />
           </Card>
-        </div>
 
-        <div text-align="center">
           <Card style={{ width: '17rem' }} className="mt-3">
             <Card.Img 
               className="d-block w-100"
@@ -59,9 +55,7 @@ export default class Home extends Component {
               <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
-        </div>
 
-        <div text-align="right">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
               <Card.Title>Другие услуги</Card.Title>
@@ -75,8 +69,7 @@ export default class Home extends Component {
               alt="Packone"
             />
           </Card>
-        </div>
-
+        </CardGroup>
       </Container>
     </>
     )
