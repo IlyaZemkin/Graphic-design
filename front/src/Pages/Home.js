@@ -5,6 +5,7 @@ import tovarsImg from '../assets/tovars.png';
 import tovarsoneImg from '../assets/tovars1.png';
 import tovarstwoImg from '../assets/tovars2.png';
 import tovarsthreeImg from '../assets/tovars3.png';
+import Backfon from '../components/Backfon';
 
 export default class Home extends Component {
   render() {
@@ -13,7 +14,8 @@ export default class Home extends Component {
       <CarouselBox />
       <Container>
         <h2 className="text-center m-4">Услуги</h2>
-        <CardGroup>
+        <CardGroup className="m-4">
+          <CardGroup className="m-3">
           <Card style={{ width: '17rem' }} className="mt-3" border="succes">
             <Card.Img 
               className="d-block w-100"
@@ -27,7 +29,9 @@ export default class Home extends Component {
               <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
+          </CardGroup>
 
+          <CardGroup className="m-3">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
               <Card.Title>Превью / Баннер</Card.Title>
@@ -41,7 +45,9 @@ export default class Home extends Component {
               alt="Packone"
             />
           </Card>
+          </CardGroup>
 
+          <CardGroup className="m-3">
           <Card style={{ width: '17rem' }} className="mt-3">
             <Card.Img 
               className="d-block w-100"
@@ -55,7 +61,9 @@ export default class Home extends Component {
               <Button variant="primary" >Об услуге</Button>
             </Card.Body>
           </Card>
+          </CardGroup>
 
+          <CardGroup className="m-3">
           <Card style={{ width: '17rem' }} className="mt-3" text="primary">
             <Card.Body>
               <Card.Title>Другие услуги</Card.Title>
@@ -69,8 +77,10 @@ export default class Home extends Component {
               alt="Packone"
             />
           </Card>
+          </CardGroup>
         </CardGroup>
       </Container>
+      <Backfon />
     </>
     )
   }
