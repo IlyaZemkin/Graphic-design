@@ -1,7 +1,24 @@
+#textblock {
+    background-color: #210002;
+    height: 100vh;
+  }
+  
+  #textblock-title {
+    color: hwb(211 29% 0%);
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "Helvetica Neue";
+  }
+  
+  #textblock-content {
+    color: hwb(211 29% 0%);
+    font-size: 20px;
+  }
+
 .parallax {
     background-image: url(./backfon.png);
     height: 300px;
-    width: 2000px;
+    width: 1519px;
     background-attachment: fixed;
     display: flex;
     justify-content: center;

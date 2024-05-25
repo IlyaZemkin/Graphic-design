@@ -21,6 +21,7 @@ import Info from "../Pages/Info.js"
 import About from "../Pages/About.js";
 import Contacts from "../Pages/Contacts.js";
 import Blog from "../Pages/Blog.js";
+import Footer from "./Footer.js"
 
 export default class Header extends Component {
     render() {
@@ -72,6 +73,7 @@ export default class Header extends Component {
                         <Route exact path="/blog" element={<Blog />} />
                     </Routes>
                 </Router>
+                <Footer />
             </>
         );
     }

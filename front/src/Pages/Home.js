@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import CarouselBox from '../components/CarouselBox';
-import { Container, Card, Button, CardGroup } from 'react-bootstrap';
+import { Container, Card, Button, CardGroup, Row, Col } from 'react-bootstrap';
 import tovarsImg from '../assets/tovars.png';
 import tovarsoneImg from '../assets/tovars1.png';
 import tovarstwoImg from '../assets/tovars2.png';
 import tovarsthreeImg from '../assets/tovars3.png';
 import Backfon from '../components/Backfon';
+import backfon from '../components/backfon.png';
 
 export default class Home extends Component {
   render() {
@@ -81,6 +82,18 @@ export default class Home extends Component {
         </CardGroup>
       </Container>
       <Backfon />
+
+      <Container style={{ marginBottom: '30px'}} className="m-5">
+        <Row>
+          <Col md={7}>
+            <img src={backfon} height={200} />
+          </Col>
+          <Col md={5}>
+            <h2>Web Developer Blog</h2>
+            <p>Reprehenderit voluptate nostrud incididunt eiusmod dolore nulla. Dolor aliquip quis dolore labore non nulla cupidatat mollit ea. Cupidatat enim fugiat qui mollit sit ullamco officia.Occaecat sint id labore dolor elit sint nostrud cillum fugiat. Consequat nulla sunt tempor tempor veniam. Magna pariatur irure esse incididunt qui aute veniam sint labore quis nostrud ut. Qui tempor duis nisi irure culpa reprehenderit anim consectetur qui mollit. Amet tempor ex proident tempor non nulla duis enim cillum aute cillum velit labore laborum. Exercitation ipsum eiusmod minim adipisicing dolore dolor duis culpa aliquip commodo laborum.</p>
+          </Col>
+        </Row>
+      </Container>
     </>
     )
   }

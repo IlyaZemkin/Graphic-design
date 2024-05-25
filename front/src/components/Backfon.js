@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
-import './Backfon.css';
+import backfon from './backfon.png';
+import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 
+const Styles = styled.div`
+    .parallax {
+        background: url(${backfon}) no-repeat fixed bottom;
+        background-size: cover;
+        color: #efefef;
+        height: 300px;
+        position: relative;
+        z-index: -2;
+    }
+    .overlay {
+        background-color: #000;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+`;
+
 const Backfon = () => (
-        <div class="parallax">
-            <div className="overlay"></div>
-                <Container>
-                    <h1>Web Developer Blog</h1>
-                    <p>Elit adipisicing proident non id ad. In dolore irure adipisicing Lorem velit ullamco nisi nostrud exercitation. Anim do irure eiusmod dolor laborum commodo minim dolore voluptate cupidatat adipisicing ipsum id ullamco.</p>
-                    <div class="mask"></div>
-                </Container>
+    <Styles>
+        <div className="parallax">
+        <div className="overlay"></div>
+        <Container>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h1>Web Developer Blog</h1>
+            <p>Eu nulla id magna deserunt eu anim in. Officia commodo deserunt nostrud sunt voluptate labore exercitation veniam. Occaecat tempor et pariatur tempor ipsum quis eu incididunt commodo do.</p>
+        </Container>
         </div>
+    </Styles>
 )
 
 export default Backfon;
