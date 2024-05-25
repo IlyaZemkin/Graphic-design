@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Tab, Nav, Row, Col } from 'react-bootstrap';
+import { Container, Tab, Nav, Row, Col, Card } from 'react-bootstrap';
 
 export default class About extends Component {
   render() {
@@ -10,10 +10,10 @@ export default class About extends Component {
             <Col sm={3}>
               <Nav variant="pills" className="flex-column mt-2">
                 <Nav.Item>
-                  <Nav.Link eventKey="first" >Design</Nav.Link>
+                  <Nav.Link eventKey="first" >Правила</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second" >Services</Nav.Link>
+                  <Nav.Link eventKey="second" >Отзывы</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="third" >Partners</Nav.Link>
@@ -29,8 +29,47 @@ export default class About extends Component {
             <Col sm={9}>
               <Tab.Content className="mt-3">
                 <Tab.Pane eventKey="first">
-                  <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1776081743/2cdf9839-2a80-47f7-81d3-069d04d8ca6e-cover.png" />
-                  <p>Design Design Design Design Design</p>
+                <Card className="m-5" border="succes">
+              <Card.Body>
+                <h5>Правила «Evry Project» :</h5>
+                <p>
+                <p>
+                  • 1. Спам:<br></br>
+                  1.1. Больше 3-х одинаковых сообщений в ряд. (чс).<br></br>
+                  1.2. Слишком часто писать по поводу своего заказа, когда он будет готов и т.д. (чс).<br></br>
+                  1.3. Отвлекать дизайнера какими-либо способами, когда он работает. (чс).<br></br>
+                  1.4. Если дизайнер онлайн, но не отвечает, значит он сейчас занят выполнением чужого заказа. Писать ему в это время тысячу раз не стоит, просто напишите вопрос и спокойно ждите ответа.
+                </p>
+
+                <p>
+                  • 2. Время работы:<br></br>
+                  2.1. Работа выполняется от 24ч до недели в зависимости от очереди.<br></br>
+                  2.2. Чтобы Ваш заказ был выполнен быстрее, можно договориться.<br></br>
+                  2.3. В случае, если дизайнер не успеет выполнить Вашу работу в указанный срок, Вам будут обязаны сделать скидку 5О% на любой товар.
+                </p>
+
+                <p>
+                  • 3. Оплата:<br></br>
+                  3.1. Любой заказ оплачивается по 1ОО% ПРЕДОПЛАТЕ.<br></br>
+                  3.2. Оплатить заказ голдой НЕВОЗМОЖНО.<br></br>
+                  3.3. Оплата принимается на Qiwi или Сбер.<br></br>
+                  3.4. Возврат денежных средств, после оплаты заказа НЕДЕЙСТВИТЕЛЕН. (возможны исключения)
+                </p>
+
+                <p>
+                  • 4. Отзыв:<br></br>
+                  4.1. После выполнения заказа, Вы можете оставить отзыв о качестве работы. Просьба не оставлять отзывы стикерами или просто в одно слово, т.к VK их в скором времени удаляет. Спасибо за понимание.<br></br>
+                  4.2. В отзыве можете написать насколько Вы довольны своим заказом, что Вам понравилось, а что нет. Что нужно улучшить дизайнеру, напишите его ошибки, чтобы в будущем он их впредь не совершал.<br></br>
+                  4.3. Также напишите, будете-ли Вы ещё заказывать у Дизайнера что-либо или же нет и почему.
+                </p>
+
+                <p>
+                  • 5. Обман:<br></br>
+                  5.1. Обман в любом виде, будь это шутка, не шутка, Вы в любом случае будете отправлены в ЧС и получите БАН в группе.<br></br>
+                  5.2. Интересоваться ценами, задавать любые вопросы по поводу потенциально заказа - разрешено.</p>
+                </p>
+              </Card.Body>
+            </Card>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1080449610/5442d7d7-4ab7-4e3a-8d62-1b1b0f26a48c-cover.png" />

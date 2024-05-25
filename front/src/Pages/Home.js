@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import CarouselBox from '../components/CarouselBox';
-import { Container, Card, Button, CardGroup, Row, Col } from 'react-bootstrap';
+import { Container, Card, Button, CardGroup, Row, Col, Nav } from 'react-bootstrap';
 import tovarsImg from '../assets/tovars.png';
 import tovarsoneImg from '../assets/tovars1.png';
 import tovarstwoImg from '../assets/tovars2.png';
 import tovarsthreeImg from '../assets/tovars3.png';
 import Backfon from '../components/Backfon';
 import backfon from '../components/backfon.png';
+import myface from '../components/myface.png';
+import Footer from "../components/Footer.js"
 
 export default class Home extends Component {
   render() {
@@ -27,7 +29,7 @@ export default class Home extends Component {
             <Card.Body>
               <Card.Title>Оформление социальных сетей</Card.Title>
               <Card.Text>◉ Оформление Вк/Ют - от 699₽ <p>◉ Отзывы - ★★★★★</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne</Card.Text>
-              <Button variant="primary" >Об услуге</Button>
+              <Button variant="primary" href="/oforma">Об услуге</Button>
             </Card.Body>
           </Card>
           </CardGroup>
@@ -37,7 +39,7 @@ export default class Home extends Component {
             <Card.Body>
               <Card.Title>Превью / Баннер</Card.Title>
               <Card.Text>◉ Превью/Баннер - 300₽ <p>◉ Отзывы - ☆☆☆☆☆</p> ◉ Оплата осуществляется на: СберБанк <p>◉ Остальные услуги уточнять</p> ✉Для заказа/вопросов писать - https://vk.com/itsnelxne <p>Укрась свой видеоролик! Опыт работы, более 3-х лет.</p></Card.Text>
-              <Button variant="primary" >Об услуге</Button>
+              <Button variant="primary">Об услуге</Button>
             </Card.Body>
             <Card.Img 
               className="d-block w-100"
@@ -82,18 +84,24 @@ export default class Home extends Component {
         </CardGroup>
       </Container>
       <Backfon />
-
+      
       <Container style={{ marginBottom: '30px'}} className="m-5">
         <Row>
-          <Col md={7}>
-            <img src={backfon} height={200} />
+          <Col md={7} className="text-center">
+            <img src={myface} height={500} />
           </Col>
           <Col md={5}>
-            <h2>Web Developer Blog</h2>
-            <p>Reprehenderit voluptate nostrud incididunt eiusmod dolore nulla. Dolor aliquip quis dolore labore non nulla cupidatat mollit ea. Cupidatat enim fugiat qui mollit sit ullamco officia.Occaecat sint id labore dolor elit sint nostrud cillum fugiat. Consequat nulla sunt tempor tempor veniam. Magna pariatur irure esse incididunt qui aute veniam sint labore quis nostrud ut. Qui tempor duis nisi irure culpa reprehenderit anim consectetur qui mollit. Amet tempor ex proident tempor non nulla duis enim cillum aute cillum velit labore laborum. Exercitation ipsum eiusmod minim adipisicing dolore dolor duis culpa aliquip commodo laborum.</p>
+            <h2>Немного обо мне...</h2>
+            <br></br>
+            <p>Для меня графический дизайн - это хобби. Мне нравиться вдыхать жизнь в идеи, превращать пустые холсты в шедевры. Я чувствую глубокую связь с каждой работой, которую создавал, видя в ней отражение своей души.<br></br></p>
+
+            <p>Часы перетекали в ночи, когда я терялся в потоке творчества. Проекты оживали на моём экране, как яркие звезды на темном небе. Мои глаза сияют восторгом, а усталость смывалась чувством выполненного долга.<br></br></p>
+
+            <p>Всю свою душу я вкладываю в каждый дизайн, зная, что мои творения будут жить своей собственной жизнью, влияя на людей и оставляя неизгладимый след в мире. И в эти редкие моменты, когда я останавливалась и смотрю на свою работу, я чувствую себя по-настоящему живым, и я горд этим.</p>
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
     )
   }

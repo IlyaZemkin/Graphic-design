@@ -11,10 +11,12 @@ import forma8 from '../assets/blogpost/1.png';
 import forma9 from '../assets/blogpost/3.png';
 import forma10 from '../assets/blogpost/4.png';
 import forma11 from '../assets/blogpost/19.png';
+import Footer from "../components/Footer.js"
 
 export default class Blog extends Component {
   render() {
     return (
+      <>
       <Container>
         <Row>
           <Col md="9">
@@ -232,6 +234,8 @@ export default class Blog extends Component {
           </Col>
         </Row>
       </Container>
+      <Footer />
+      </>
     );
   }
 }

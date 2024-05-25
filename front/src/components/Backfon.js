@@ -33,8 +33,8 @@ const Backfon = () => (
             <br></br>
             <br></br>
             <br></br>
-            <h1>Web Developer Blog</h1>
-            <p>Eu nulla id magna deserunt eu anim in. Officia commodo deserunt nostrud sunt voluptate labore exercitation veniam. Occaecat tempor et pariatur tempor ipsum quis eu incididunt commodo do.</p>
+            <h1>Evry Project</h1>
+            <p>Привет, меня зовут Илья Неланов! Разрабатываю уникальный визуал. Дизайню ВК и превьюшки на ютуб каналы</p>
         </Container>
         </div>
     </Styles>
