@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Tab, Nav, Row, Col, Card } from 'react-bootstrap';
+import Quote from "./images/quote.png";
+import Face1 from "./images/face1.jpg";
+import Face2 from "./images/face2.jpg";
+import Face3 from "./images/face3.jpg";
+import './style.css';
 
 export default class About extends Component {
   render() {
@@ -72,8 +77,34 @@ export default class About extends Component {
             </Card>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1080449610/5442d7d7-4ab7-4e3a-8d62-1b1b0f26a48c-cover.png" />
-                  <p>Services Services Services Services Services</p>
+                  <div className="container">
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <img className="face" src={ Face1 } />
+                        <h3>David Khan</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <img className="face" src={ Face2 } />
+                        <h3>Maria Alvers</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <img className="face" src={ Face3 } />
+                        <h3>Mike Philipson</h3>
+                      </div>
+                    </div>
+                  </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
                   <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1082692825/aebfb082-71e9-4f88-84a2-fca5bc1e0f8e-cover.png" />
