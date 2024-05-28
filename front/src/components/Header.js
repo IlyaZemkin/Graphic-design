@@ -22,6 +22,7 @@ import About from "../Pages/About.js";
 import Contacts from "../Pages/Contacts.js";
 import Blog from "../Pages/Blog.js";
 import Oforma from "../Pages/Oforma.js";
+import Login from "../Pages/Login.js";
 
 export default class Header extends Component {
     render() {
@@ -57,8 +58,8 @@ export default class Header extends Component {
                                 <Button variant="outline-info" className="mt-1">Search</Button>
                             </Form>
                             <Nav>
-                                <Button variant="primary" className="m-2 ms-5 mt-2">Log in</Button>
-                                <Button variant="primary" className="m-2 mt-2">Sign out</Button>
+                                <Button variant="primary" className="m-2 ms-5 mt-2" href="/login">Log in</Button>
+                                <Button variant="primary" className="m-2 mt-2" href="/login">Sign out</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
@@ -72,6 +73,7 @@ export default class Header extends Component {
                         <Route exact path="/contacts" element={<Contacts />} />
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/oforma" element={<Oforma />} />
+                        <Route exact path="/login" element={<Login />} />
                     </Routes>
                 </Router>
                 

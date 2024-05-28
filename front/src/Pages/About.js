@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Tab, Nav, Row, Col, Card } from 'react-bootstrap';
+import { Container, Tab, Nav, Row, Col, Card, CardBody } from 'react-bootstrap';
 import Quote from "./images/quote.png";
 import Face1 from "./images/face1.jpg";
 import Face2 from "./images/face2.jpg";
@@ -76,6 +76,7 @@ export default class About extends Component {
               </Card.Body>
             </Card>
                 </Tab.Pane>
+                
                 <Tab.Pane eventKey="second">
                   <div className="container">
                     <div className="block">
@@ -106,6 +107,7 @@ export default class About extends Component {
                     </div>
                   </div>
                 </Tab.Pane>
+
                 <Tab.Pane eventKey="third">
                   <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1082692825/aebfb082-71e9-4f88-84a2-fca5bc1e0f8e-cover.png" />
                   <p>Partners Partners Partners Partners Partners</p>
