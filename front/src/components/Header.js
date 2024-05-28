@@ -23,6 +23,9 @@ import Contacts from "../Pages/Contacts.js";
 import Blog from "../Pages/Blog.js";
 import Oforma from "../Pages/Oforma.js";
 import Login from "../Pages/Login.js";
+import Prewie from "../Pages/Prewie.js";
+import Private from "../Pages/Private.js";
+import Other from "../Pages/Other.js";
 
 export default class Header extends Component {
     render() {
@@ -73,7 +76,10 @@ export default class Header extends Component {
                         <Route exact path="/contacts" element={<Contacts />} />
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/oforma" element={<Oforma />} />
+                        <Route exact path="/prewie" element={<Prewie />} />
                         <Route exact path="/login" element={<Login />} />
+                        <Route exact path="/private" element={<Private />} />
+                        <Route exact path="/other" element={<Other />} />
                     </Routes>
                 </Router>
                 

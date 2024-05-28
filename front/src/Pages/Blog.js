@@ -211,23 +211,23 @@ export default class Blog extends Component {
           </Col>
 
           <Col md="3">
-            <h5 className="text-center mt-5">Categories</h5>
+            <h5 className="text-center mt-5">Выполнял работы в категориях:</h5>
             <Card>
               <ListGroup variant="flush">
-                <ListGroup.Item>Blue</ListGroup.Item>
-                <ListGroup.Item>Pink</ListGroup.Item>
-                <ListGroup.Item>Black</ListGroup.Item>
-                <ListGroup.Item>Orange</ListGroup.Item>
-                <ListGroup.Item>Transparent</ListGroup.Item>
-                <ListGroup.Item>Green</ListGroup.Item>
+                <ListGroup.Item>Перманентный макияж</ListGroup.Item>
+                <ListGroup.Item>Магазин одежды</ListGroup.Item>
+                <ListGroup.Item>Сеть пиццерий</ListGroup.Item>
+                <ListGroup.Item>Ногтевая студия</ListGroup.Item>
+                <ListGroup.Item>Ремонт квартир</ListGroup.Item>
+                <ListGroup.Item>Тату-салон</ListGroup.Item>
               </ListGroup>
             </Card>
 
             <Card className="mt-3" bg="primary">
               <Card.Body>
-                <Card.Title>Side widget</Card.Title>
+                <Card.Title>Evry Project</Card.Title>
                 <Card.Text>
-                  Выбирай для себя лучшую категорию =)
+                  Выкладываю только свежие работы. Категории добавляются в зависимости от заказов
                 </Card.Text>
               </Card.Body>
             </Card>

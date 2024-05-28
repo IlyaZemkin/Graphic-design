@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Col, Row, Card, ListGroup, Button, Nav } from 'react-bootstrap';
-import tovarsImg from '../assets/tovars.png';
+import tovarsImg from '../assets/tovars1.png';
 
 export default class Oforma extends Component {
   render() {
@@ -18,8 +18,8 @@ export default class Oforma extends Component {
   
                 />
                 <Card.Body className="text-center">
-                  <h3>Оформление социальных сетей</h3><br></br>
-                  <p>◉ Оформление Вк / Ют - от 699 ₽:<br></br>
+                  <h3>Разработка превью / баннеров</h3><br></br>
+                  <p>◉ Превью / баннер - от 300 ₽:<br></br>
 
                     • Правила группы - <Nav.Link href="/about">нажми, чтобы прочитать правила</Nav.Link>
                     • Отзывы - <Nav.Link href="/about">нажми, чтобы прочитать отзывы</Nav.Link>
