@@ -4,6 +4,13 @@ import Quote from "./images/quote.png";
 import Face1 from "./images/face1.jpg";
 import Face2 from "./images/face2.jpg";
 import Face3 from "./images/face3.jpg";
+import Face4 from "./images/face4.jpg";
+import Face5 from "./images/face5.jpg";
+import Face6 from "./images/face6.jpg";
+import Face7 from "./images/face7.jpg";
+import Face8 from "./images/face8.jpg";
+import Fon1 from "./images/fon1.png";
+import Fon2 from "./images/fon2.png";
 import './style.css';
 
 export default class About extends Component {
@@ -21,13 +28,10 @@ export default class About extends Component {
                   <Nav.Link eventKey="second" >Отзывы</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third" >Partners</Nav.Link>
+                  <Nav.Link eventKey="third" >Ведущие агентства</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="fourth" >Experience</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fifth" >Reviews</Nav.Link>
+                  <Nav.Link eventKey="fourth" >Опыт</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
@@ -36,7 +40,7 @@ export default class About extends Component {
                 <Tab.Pane eventKey="first">
                 <Card className="m-5" border="succes">
               <Card.Body>
-                <h5>Правила «Evry Project» :</h5>
+                <h5>Правила «Evry Project» при заказе :</h5>
                 <p>
                 <p>
                   • 1. Спам:<br></br>
@@ -77,48 +81,142 @@ export default class About extends Component {
             </Card>
                 </Tab.Pane>
                 
-                <Tab.Pane eventKey="second">
-                  <div className="container">
+                <Tab.Pane className="mt-5" eventKey="second">
+                  <div className="overlay">
                     <div className="block">
                       <div className="content">
                         <img className="quote-img" src={ Quote } />
-                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <p>Это больше чем качество! Безумно стильно делает, ничего лишнего. Всё как надо и главное, работу выполнил быстро</p>
                         <img className="face" src={ Face1 } />
-                        <h3>David Khan</h3>
+                        <h3>Сергей Кипов</h3>
                       </div>
                     </div>
 
                     <div className="block">
                       <div className="content">
                         <img className="quote-img" src={ Quote } />
-                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <p>Достаточно быстро качественно выполнил работу, заказываю уже в третий раз. Цена однако иногда достаточно высока. Но работа сделана качественно.</p>
                         <img className="face" src={ Face2 } />
-                        <h3>Maria Alvers</h3>
+                        <h3>Andrea Laxuse</h3>
                       </div>
                     </div>
 
                     <div className="block">
                       <div className="content">
                         <img className="quote-img" src={ Quote } />
-                        <p>Sit cupidatat veniam aute ea adipisicing irure est amet aliquip amet laboris. In eu cupidatat in in sint sit sunt qui ut fugiat.</p>
+                        <p>Сделал заказ, в точности как я и описал/представлял итоговый результат, подстроился под мои рекомендации, вообщем крутой чел. СОВЕТУЮ✊</p>
                         <img className="face" src={ Face3 } />
-                        <h3>Mike Philipson</h3>
+                        <h3>Иван Тсемка</h3>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane className="mt-5" eventKey="second">
+                  <div className="overlay">
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Самый топовый дизайнер - не кидок , всем советую , делает очееень годные работы 🤗</p>
+                        <img className="face" src={ Face4 } />
+                        <h3>Богдан Солдатов</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Заказал оформление на ютуб, сделал заказ очень классно и самое главное это за хорошую цену) Советую всем кто хочет заказывать оформление!</p>
+                        <img className="face" src={ Face3 } />
+                        <h3>User Name</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Гениальный дизайнер, делает всё в сроки, нет проблем, за него ручаюсь, если что - пишите, лучший! 👑</p>
+                        <img className="face" src={ Face5 } />
+                        <h3>Максимильян Ветродуйкин </h3>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+                <Tab.Pane className="mt-5" eventKey="second">
+                  <div className="overlay">
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Сделал шикарную оформу на YT 🤩 Всем советую у него заказывать! Качественно и дёшево 😋</p>
+                        <img className="face" src={ Face6 } />
+                        <h3>Kirill Smirnov</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Все очень круто, реально качественно, и не скажу что это дорого, за такую цену это дешево, так что заказывайте пока не поздно:)</p>
+                        <img className="face" src={ Face7 } />
+                        <h3>Danil Tsarev</h3>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <div className="content">
+                        <img className="quote-img" src={ Quote } />
+                        <p>Сделал красивую оформу для клана, все на высшем уровне, надежно и качественно, можете заказывать оформы/логотипы и все остальное у него,советую</p>
+                        <img className="face" src={ Face8 } />
+                        <h3>Артем Юрлагин</h3>
                       </div>
                     </div>
                   </div>
                 </Tab.Pane>
 
                 <Tab.Pane eventKey="third">
-                  <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1082692825/aebfb082-71e9-4f88-84a2-fca5bc1e0f8e-cover.png" />
-                  <p>Partners Partners Partners Partners Partners</p>
+                  <img className="d-block w-100" src={ Fon1 } />
+                  <p>Top Graphic Design Agencies From Around the World Top Graphic Design Agencies From Around the World Top Graphic</p>
+                  <Card className="m-4" border="warning">
+              <Card.Body>
+                <h5>Ведущие агентства графического дизайна со всего мира :</h5><br></br>
+                <p>
+                <p>
+                  1. Duck.Design<br></br>
+                  2. Sociallyin<br></br>
+                  3. Clay<br></br>
+                  4. Neuron<br></br>
+                  5. Clever Code Lab<br></br>
+                  6. Pentagram<br></br>
+                  7. Xhilarate<br></br>
+                  8. Sagmeister & Walsh<br></br>
+                  9. Captiva Marketing<br></br>
+                  10. Starfish<br></br>
+                  11. Cleveland Design<br></br>
+                  12. Digital Silk<br></br>
+                  13. The Bureau of Small Projects<br></br>
+                  14. Landor<br></br>
+                  15. The Yard Creative
+                </p>
+                </p>
+              </Card.Body>
+            </Card>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
-                  <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/2845539798/000e9a46-32e6-4993-a8a2-4e78101d55a6-cover.png" />
-                  <p>Experience Experience Experience Experience Experience</p>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fifth">
-                  <img className="d-block w-100" src="https://s3-alpha.figma.com/hub/file/1080424384/f292237b-3b39-4ab7-ab5c-919be7686fcd-cover.png" />
-                  <p>Reviews Reviews Reviews Reviews Reviews</p>
+                <img className="d-block w-100" src={ Fon2 } />
+                  <p>experience experience experience experience experience experience experience experience experience experience expe</p>
+                  <Card className="m-4" border="primary">
+              <Card.Body>
+                <h5>Графический дизайн (иногда известный как коммуникационный дизайн) — это работа с изображениями и текстом.<br></br>Для работы в этой сфере необходимы следующие навыки :</h5><br></br>
+                <p>
+                <p>
+                  1. Коммуникация: способность передавать идеи через текст и изображения.<br></br><br></br>
+                  2 Творчество: способность креативно выражать идеи через текст и изображения, а также генерировать решения для клиентов.<br></br><br></br>
+                  3. Технологии: владение различными формами технологий, такими как программное обеспечение для дизайна (например, Quark, InDesign, Adobe), а также знание языков программирования (включая HTML и CSS) и платформ для управления контентом (например, WordPress).<br></br><br></br>
+                  4. Управление временем: способность управлять несколькими проектами одновременно, выполнять задания в течение длительного времени и соблюдать установленные сроки.<br></br><br></br>
+                  5. Типографика: знание шрифтов, знание правил их использования, а также знание ведущих, кернинга и отслеживания.
+                </p>
+                </p>
+              </Card.Body>
+            </Card>
                 </Tab.Pane>
               </Tab.Content>
             </Col>

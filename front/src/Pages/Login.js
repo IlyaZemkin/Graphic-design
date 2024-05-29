@@ -12,11 +12,9 @@ export default class Login extends Component {
             <link href='https://unpkd.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
         </head>
 
-<br></br>
         <Container style={{ width: '500px'}} className="mt-5">
         <body>
             <div className="wrapper">
-                <p>
                 <form action="">
                     <h1>Login</h1>
                     <div className="input-box">
@@ -38,7 +36,6 @@ export default class Login extends Component {
                         <p>Don`t have an account? <a href="#">Register</a></p>
                     </div>
                 </form>
-                </p>
             </div>
         </body>
       </Container>
